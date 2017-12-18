@@ -14,6 +14,7 @@ post_data = urlencode(params, encoding='utf8').encode('utf8')
 req = request.Request('http://fanyi.baidu.com/v2transapi', post_data, {
     'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
     'Content-Length': len(post_data)
+    })
 rsp = request.urlopen(req)
 res = rsp.read().decode('utf8')
 obj = json.loads(res)
